@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <div id="content"></div>
+  <form>
+    <input type="text" placeholder="UserId" name="userid" />
+    <br /><input type="text" placeholder="password" name="password" />
+    <br /><input type="button" value="Login" onClick="login(this.parentNode);" />
+  </form>
+  <div id="msg"></div>
+  <script>
+    function login(obj) {
+        google.script.run
+        .withSuccessHandler((obj) => {
+          (obj.loggedin == true) ? document.getElementById('msg').innerHTML = "Your are logged in" : document.getElementById('msg').innerHTML = "Go away";
+        }).login(obj);
+      }
+    console.log("My Code");
+  </script>
+</body>
+
+</html>
