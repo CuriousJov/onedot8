@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400&display=swap" rel="stylesheet">
+  <link href="https://ltschool.web.app/css/Bootstrapcolor.css" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      font-family: 'Prompt';
+      font-size: 14px;
+    }
+
+    .form-control:focus {
+      border-color: #6265e4 !important;
+      box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
+    }
+
+    .btn-text-left {
+      text-align: left;
+    }
+
+    .btn-text-right {
+      text-align: right;
+    }
+
+
+    .btn-text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <div class="card">
+          <div class="card-header h5 bg-info text-white text-center">
+            <i class="fa-solid fa-box-archive"></i> Upload Files
+          </div>
+          <div class="card-body">
+            <!-- <h5 class="card-title text-center"><i class="fas fa-thumbs-up"></i> ..This form is very useful. input All types can be applied to many further enhancements.</h5> -->
+            <div class="container">
+              <div class="bg-white">
+                <!-- <div class="row"> -->
+
+                <div class="col-md-12">
+                  <!-- -------------------------------Start Form------------------------------------------ -->
+                  <form id="myForm" onsubmit="submitForm()">
+                    <!-- <p class="h3 mb-4 text-center"><i class="fas fa-chalkboard-teacher"></i> Record Form</p> -->
+                    <!-- <div class="row mb-2">
+                      <div class="form-group col-md-4">
+                        <label for="inputnick"><i class="fas fa-user"></i> Prefix</label>
+                        <select id="data0" class="form-control" required>
+                                                <option selected disabled value="">Choose..</option>
+                                                <option value="Boy">Boy</option>
+                                                <option value="Girl">Girl</option>
+                                                <option value="Mr.">Mr.</option>
+                                                <option value="Mrs.">Mrs.</option>
+                                                <option value="Miss">Miss</option>
+                                              </select>
+                      </div> -->
+                    <!-- -------------------------------Name + Surname------------------------------------------ -->
+                    <div class="row my-3">
+
+                      <div class="form-group col-md-4">
+                        <label for="reference"><i class="fas fa-solid fa-barcode"></i> Reference No.</label>
+                        <input type="text" class="form-control"  id="reference"  placeholder="DTN or any reference no." required>
+                      </div>
+
+                      <div class="form-group col-md-8">
+                        <label for="fileName"><i class="fa-solid fa-file-lines"></i> File Name</label>
+                        <input type="text" class="form-control" id="fileName" placeholder="PD_Work and Financial Plan 2022" required>
+                      </div>
+
+                      <div class="form-group col-md-4">
+                        <label for="fileDate"><i class="fa-regular fa-calendar-days"></i> File Date</label>
+                        <input type="date" class="form-control"  id="fileDate" required>
+                      </div>
+
+                    </div>
+                    <!-- -------------------------------Sex + Birthday------------------------------------------ -->
+                    <!--  <div class="row  mb-2">
+                      <div class="form-group col-md-6">
+                        <p><i class="fas fa-restroom"></i> Sex</p>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="data3" id="id1"  value="Male" required>
+                          <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="data3" id="id2" value="Female" required>
+                          <label class="form-check-label" for="female">Female</label>
+                        </div>
+                      </div>  -->
+
+                    <!-- -------------------------------Email + Mobile Number------------------------------------------ -->
+                    <!-- <div class="row  mb-2">
+                      <div class="form-group col-md-6">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" class="form-control"  id="data5" placeholder="Email" required>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="phone"><i class="fas fa-mobile-alt"></i> Mobile Number</label>
+                        <input type="tel" class="form-control"  id="data6" placeholder="Mobile Number" required>
+                      </div>
+                    </div> -->
+                    <!-- -------------------------------Hobby------------------------------------------ -->
+                    <!-- <div class="form-group mb-2">
+                      <label for="color"><i class="fas fa-book-reader"></i> Hobby</label>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="data7" type="checkbox" id="id1" value="Movies" required>
+                        <label class="form-check-label" for="inlineCheckbox1">Movies</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="data7" type="checkbox" id="id2" value="Music" required>
+                        <label class="form-check-label" for="inlineCheckbox2">Music</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="data7" type="checkbox" id="id3" value="Games" required>
+                        <label class="form-check-label" for="inlineCheckbox3">Games</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="data7" type="checkbox" id="id4" value="Sports" required>
+                        <label class="form-check-label" for="inlineCheckbox3">Sports</label>
+                      </div>
+                    </div> -->
+                    <!-- -------------------------------BloodType------------------------------------------ -->
+                    <div class="row mb-2">
+
+                      <div class="form-group col-md-6">
+                        <label for="unit"><i class="fa-solid fa-building"></i> Unit</label>
+                        <select id="unit" class="form-control" required>
+                            <option selected disabled value="">Select Unit</option>
+                            <option value="Accreditition">Accreditition</option>
+                            <option value="Administrative Unit">Administrative Unit</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Market Development">Market Development</option>
+                            <option value="Planning">Planning</option>
+                            <option value="Product Development">Product Development</option>
+                            <option value="Training">Training</option>        
+                          </select>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="category"><i class="fa-solid fa-list-check"></i> Category</label>
+                        <select id="category" class="form-control" required>
+                      <option selected disabled value="">Select Category</option>
+                      <option value="Accounting Forms">Accounting Forms</option>
+                      <option value="Accreditation Forms">Accreditation Forms</option>
+                      <option value="Accreditation Reports">Accreditation Reports</option>
+                      <option value="Agency Issuances">Agency Issuances</option>
+                      <option value="Attendance Sheets">Attendance Sheets</option>
+                      <option value="Audit Observation Memo">Audit Observation Memo</option>
+                      <option value="BAC Documents">BAC Documents</option>
+                      <option value="Budget Files">Budget Files</option>
+                      <option value="BUR (Budget Utilization Rate)">BUR (Budget Utilization Rate)</option>
+                      <option value="Certificates">Certificates</option>
+                      <option value="CO Memos">CO Memos</option>
+                      <option value="Communication Letters">Communication Letters</option>
+                      <option value="Directory">Directory</option>
+                      <option value="DOT8 Advisories">DOT8 Advisories</option>
+                      <option value="GAD">GAD</option>
+                      <option value="Guidelines">Guidelines</option>
+                      <option value="Inspection Reports">Inspection Reports</option>
+                      <option value="Minutes of Meetings">Minutes of Meetings</option>
+                      <option value="PAR/PTR">PAR/PTR</option>
+                      <option value="Photo documentation">Photo documentation</option>
+                      <option value="Presentations">Presentations</option>
+                      <option value="Project Documents">Project Documents</option>
+                      <option value="Project Proposals">Project Proposals</option>
+                      <option value="References">References</option>
+                      <option value="Special Orders">Special Orders</option>
+                      <option value="Standard Procedure (ISO)">Standard Procedure (ISO)</option>
+                      <option value="Terminal Reports">Terminal Reports</option>
+                      <option value="Terms of reference">Terms of reference</option>
+                      <option value="Tourism Statistical Report">Tourism Statistical Report</option>
+                   </select>
+                  </div>
+                  
+                </div>
+                <!-- -------------------------------Name + Surname------------------------------------------ -->
+                <div class="row  my-3">
+                  <div class="form-group col-md-4">
+                    <label for="project"><i class="fa-solid fa-shield"></i> Project</label>
+                    <input type="text" class="form-control"  id="project"  placeholder="Project">
+                  </div>
+                  <div class="form-group col-md-8">
+                    <label for="activity"><i class="fa-brands fa-accessible-icon"></i> Activity</label>
+                    <input type="text" class="form-control" id="activity" placeholder="Activity">
+                  </div>
+                </div>
+                <!-- -------------------------------Address------------------------------------------ -->
+                <div class="row mb-2">
+                  <div class="form-group mb-2">
+                    <label for="tags"><i class="fa-solid fa-tags"></i> Tags</label>
+                    <textarea class="form-control" rows="2" id="tags" placeholder="#Tags" required></textarea>
+                  </div>
+
+                 <div class="form-group col-md-6 mb-2">
+                  <label for="url"><i class="fa-solid fa-link"></i> Attach Link</label>
+                  <input type="url" class="form-control" name="url" id="url" placeholder="https://docs.google.com/" pattern="https://.*" size="30">
+                   </div>
+
+                  <!-- -------------------------------Upload File------------------------------------------ -->
+                  <div class="form-group col-md-6 mb-2">
+                    <label for="formFile" class="form-label"><i class="fas fa-upload"></i> Upload File</label>
+                    <input class="form-control" type="file" name="uploadfile" id="file">
+                  </div>
+                </div>
+                <!-- -------------------------------Save------------------------------------------ -->
+                <div class="row form-group btn-text-right mb-2 mx-auto">
+                  <button type="submit" class="btn btn-success" id="btn1"><i class="fas fa-cloud-upload-alt"></i> Save</button>
+                  <button class="btn btn-success" id="btn2" type="button" disabled style="display : none">
+                        <span class="spinner-grow spinner-grow-sm" role="status" ></span>
+                        Uploading...
+                      </button>  
+
+                </div>
+
+              <div class="form-group btn-text-left mb-2 mx-auto">
+                   <button type="button" class="btn btn-warning" onclick="godatatable()"><i class="fas fa-sign-in-alt" ></i> Back</button>
+                   </div>
+
+                </form>
+                <!-- -------------------------------Complete the Form------------------------------------------ -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-info  text-center text-white"><i class="fab fa-pagelines"></i>
+          Upload Files
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- -------------------------------JAVASCRIPT------------------------------------------ -->
+  <script>
+    //    $(window).on('load',function(){
+  //   $('#form2').hide()
+  // })
+    var fileUploader = document.getElementById("file");
+      function submitForm(obj) { 
+        event.preventDefault();
+        $('#btn1').hide()
+        $('#btn2').show()
+
+        var obj = {}
+        obj.reference = $('#reference').val()
+        obj.fileName = $('#fileName').val()
+        obj.fileDate = $('#fileDate').val()
+        obj.unit = $('#unit').val()
+        obj.category = $('#category').val()
+        obj.project = $('#project').val()
+        obj.activity = $('#activity').val()
+        obj.tags = $('#tags').val()
+        obj.url = $('#url').val() //url
+
+
+        //จะอัปโหลดไฟล์ หรือ ไม่อัปโหลดไฟล์ก็ได้
+        var file = fileUploader.files[0]; 
+        if(file != undefined){
+        var reader = new FileReader(); //อ่านไฟล์เพื่อเตรียมแปลงข้อมูล
+        reader.readAsDataURL(file) //แปลงไฟล์เป็นแบบ Base64
+        reader.onload = function() {         
+        obj.imagedata = reader.result.split(',')[1];  //ดึงข้อมูลไฟล์เฉพาะส่วนที่เป็น Base64
+        obj.filename = file.name
+        obj.filetype = file.type
+        savedata(obj)
+          }}
+          else{savedata(obj)
+        }
+    }
+
+// เมื่อบันทึกไฟล์สำเร็จ
+    function savedata(obj){
+        google.script.run.withSuccessHandler(function (success) {
+          document.getElementById("myForm").reset()
+          $('#btn1').show()
+          $('#btn2').hide()
+          $('#form2').hide()
+          $('#form1').show()
+          $.LoadingOverlay("show", {image:"",fontawesome:"fa fa-solid fa-spinner fa-spin fa-xs"}); 
+           google.script.run.withSuccessHandler(showTable).getData();
+           $.LoadingOverlay("hide"); 
+            })
+            .saveData(obj);
+    }
+
+// จัดการตัวเลือกแบบ checkbox ให้เลือกกี่ช่องก็ได้
+    $(function(){
+    var checkboxes = $(':checkbox[required]');
+    checkboxes.change(function(){
+      if(checkboxes.is(':checked')) {
+          checkboxes.removeAttr('required');
+        }
+        else {
+          checkboxes.attr('required', 'required');
+        }
+    });
+});
+
+ function success(){
+  $('#form2').hide()
+  $([document.documentElement, document.body]).animate({
+    scrollTop: $('#form1').offset().top
+  },500)
+  $('#form1').show()
+  }
+
+
+
+function godatatable(){
+  $.LoadingOverlay("show", {image:"",fontawesome:"fa fa-solid fa-spinner fa-spin fa-xs"});
+  $('#form1').show()
+  $('#form2').hide()
+  $.LoadingOverlay("hide");  
+  google.script.run.withSuccessHandler(showTable).getData();
+
+}
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
+  </script>
+</body>
+
+</html>
